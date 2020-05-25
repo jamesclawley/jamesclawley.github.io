@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+	<h1>Hello World</h1>
+	<p>I'm hosted with GitHub Pages.</p>
 
-<iframe src="https://discordapp.com/widget?id=672814386309496850&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+	<iframe src="https://discordapp.com/widget?id=672814386309496850&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
 
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
 
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="/__/firebase/7.14.5/firebase-app.js"></script>
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
 
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="/__/firebase/7.14.5/firebase-analytics.js"></script>
-
-  <!-- Add Firebase products that you want to use -->
-  <script src="/__/firebase/7.14.5/firebase-auth.js"></script>
-  <script src="/__/firebase/7.14.5/firebase-firestore.js"></script>
-  
-    <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyD_oizPvIMIzXEVUYT2o9zp-u5rPR14vbY",
+			authDomain: "testgame-5b002.firebaseapp.com",
+			databaseURL: "https://testgame-5b002.firebaseio.com",
+			projectId: "testgame-5b002",
+			storageBucket: "testgame-5b002.appspot.com",
+			messagingSenderId: "726426970282",
+			appId: "1:726426970282:web:3404a10cc8e85400e3c8d3",
+			measurementId: "G-ML8W0H3JDB"
+		};
+		
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+	</script>
 </body>
 </html>
