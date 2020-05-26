@@ -1,13 +1,15 @@
 {
-  "name": "Usage",
-  "version": "3.0.0",
-  "description": "Live demo",
-  "keywords": [],
-  "homepage": "https://codesandbox.io/s/4j7m47vlm4",
-  "main": "index.js",
-  "dependencies": {
-    "@material-ui/core": "latest",
-    "react": "latest",
-    "react-dom": "latest"
-  }
+  "short_name": "Your Orders",
+  "name": "Your Orders",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
