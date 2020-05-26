@@ -11,7 +11,7 @@ var uiConfig = {
 		}
 	},
 	signInFlow: 'popup',
-	signInSuccessUrl: 'http://clawley.co.uk/',
+	signInSuccessUrl: 'http://clawley.co.uk/main',
 	signInOptions: [
 		firebase.auth.GoogleAuthProvider.PROVIDER_ID,
 		{
