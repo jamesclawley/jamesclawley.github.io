@@ -1,16 +1,27 @@
 var db = firebase.firestore();
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-
-ui.start('#firebaseui-auth-container', {
+var uiConfig = {
+	callbacks: {
+		signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+			return true;
+		},
+		uiShown: function() {
+			document.getElementById('loader').style.display = 'none';
+		}
+	},
+	signInFlow: 'popup',
+	signInSuccessUrl: 'http://clawley.co.uk/',
 	signInOptions: [
 		firebase.auth.GoogleAuthProvider.PROVIDER_ID,
 		{
 			provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
 			signInMethod: firebase.auth.EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD
 		}
-	],
-});
+	]
+};
+
+ui.start('#firebaseui-auth-container', uiConfig);
 
 if (ui.isPendingRedirect()) {
 	ui.start('#firebaseui-auth-container', uiConfig);
@@ -19,6 +30,7 @@ if (ui.isPendingRedirect()) {
 if (firebase.auth().isSignInWithEmailLink(window.location.href)) {
 	ui.start('#firebaseui-auth-container', uiConfig);
 }
+	
 
 function deleteUsers() {
 	var deleteFn = firebase.functions().httpsCallable('recursiveDelete');
